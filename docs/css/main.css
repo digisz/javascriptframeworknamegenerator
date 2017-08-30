@@ -13,6 +13,8 @@
   border: 3px solid rgb(34, 75, 145);
   background: none;
   color:rgb(34, 75, 145);
+  padding-left: 20px;
+  padding-right: 20px;
 }
 #generate:hover{
   background: rgb(34, 75, 145);
