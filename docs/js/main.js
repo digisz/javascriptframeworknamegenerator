@@ -3,6 +3,11 @@ randomName();
 
   $( "#generate" ).click(function() {
     randomName();
+    ga('send', {
+  hitType: 'event',
+  eventCategory: 'RandomName',
+  eventAction: 'TryAgain'
+});
       });
 });
 
