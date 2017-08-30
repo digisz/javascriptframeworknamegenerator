@@ -1,5 +1,5 @@
 #frameworkname{
-  font-size: 40px;
+  font-size: 26px;
   font-weight: 800;
   font-family: serif;
   text-transform: uppercase;
@@ -21,6 +21,11 @@
   color:rgb(255,255,255);
 }
 
+@media only screen and (min-width: 400px){
+  #frameworkname{
+    font-size: 40px;
+}
+}
 @media only screen and (min-width: 768px){
   #frameworkname{
     font-size: 80px;
