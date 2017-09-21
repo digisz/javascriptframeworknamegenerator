@@ -30,6 +30,7 @@ function randomName() {
           var str=data[0].defs[0].substring(2);
           $("#description").html(str);
         });
+        
         // display the noung and show everything again
         $("#theName").html(lines[randLineNum]+".JS");
         $("#frameworkname").delay(delay).slideDown(200); // random line from the text file
