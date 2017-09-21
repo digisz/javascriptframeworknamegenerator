@@ -6,18 +6,18 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Javascript Framework Name Generator</title>
+        <title>NAMR - a Name Generator for Javascript Frameworks</title>
         <meta name="description" content="Name Generator for Javascript Frameworks.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         
         <!--  Essential META Tags -->
-        <meta property="og:title" content="Javascript Framework Name Generator">
+        <meta property="og:title" content="NAMR - a Name Generator for Javascript Frameworks">
         <meta property="og:description" content="Need some inspiration which framework you could be developing next? We are here to help.">
         <meta property="og:image" content="https://digisz.github.io/javascriptframeworknamegenerator/thumbnail.jpg">
         <meta property="og:url" content="https://digisz.github.io/javascriptframeworknamegenerator/">
         <!--  Non-Essential, But Recommended -->
-        <meta property="og:site_name" content="Javascript Framework Name Generator">
+        <meta property="og:site_name" content="NAMR - a Name Generator for Javascript Frameworks">
         <meta name="twitter:image:alt" content="Need some inspiration which framework you could be developing next? We are here to help.">
         <meta name="twitter:site" content="@digisz">
 
@@ -34,8 +34,15 @@
     <body>
     <div class="jumbotron">
       <div class="container">
-        <h1>Javascript Framework Name Generator</h1>
-        <p>Need some inspiration which framework you could be developing next? We are here to help.</p>
+        <div class="row">
+            <div class="col-xs-12 col-md-2 text-center">
+              <img src="thumbnail.jpg" height="200px" width="auto" alt="Logo" />
+            </div>
+            <div class="col-md-9 col-md-offset-1">
+              <h1>NAMR</h1>
+              <p>Do you need some inspiration which Javascript framework you could be developing next? We are here to help.</p>
+            </div>
+          </div>
       </div>
     </div>
 
@@ -57,7 +64,11 @@
       </div>
       <span class="trnt_text">getting funky...</span>
     </div>
-          <div id="frameworkname"></div>
+          <div id="frameworkname">
+            <div id="theName"></div>
+            <div id="description"></div>
+          </div>
+  
           <button id="generate" class="btn btn-lg" type="button" aria-expanded="false">
              Try Again</button>
         </div>
