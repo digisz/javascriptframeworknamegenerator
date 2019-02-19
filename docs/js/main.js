@@ -12,7 +12,7 @@ randomName();
 });
 
 function randomName() {
-    $.get('txt/nounlist.txt', function(txt) {
+    $.get('txt/adjectives.txt', 'txt/nounlist.txt', function(adjs, txt) {
       // Hide the latest name and the button
       $("#frameworkname").hide(0);
       $("#generate").hide(0);
@@ -23,6 +23,8 @@ function randomName() {
       // extract a noun
         var lines = txt.split("\n");
         var randLineNum = Math.floor(Math.random() * lines.length);
+        var adjs = txt.split("\n");
+        var randAdjNum = Math.floor(Math.random() * adjs.length);
         // load definition
         $.ajax({
           url: "https://api.datamuse.com/words?sp="+lines[randLineNum]+"&md=d"
@@ -32,8 +34,7 @@ function randomName() {
         });
 
         // display the noun and show everything again
-        // $("#theAdj").html(adj[randLineNum]);
-        $("#theName").html(lines[randLineNum]);
+        $("#theName").html(adjs[randAdjNum] + lines[randLineNum]);
         $("#frameworkname").delay(delay).slideDown(200); // random line from the text file
         $("#generate").delay(delay).slideDown(200);
     });
