@@ -16,7 +16,7 @@
   filter: blur(0px);
 }
 
-#description{
+#description, #definition{
   font-size: 15px;
   font-weight: 400;
   text-transform:none;
@@ -175,7 +175,7 @@
       transform: rotate(360deg);
     }
   }
-  
+
   @keyframes trnt_arm-move {
     0% {
       transform:rotate(20deg);
@@ -189,14 +189,3 @@
         transform:rotate(20deg);
       }
     }
-
-
-
-
-
-
-
-
-
-
-
