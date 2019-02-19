@@ -4571,10 +4571,6 @@ clerk of the chapel
 foreman
 mechanic
 miller
-moldmaker
-panel beater
-patternmaker
-plant operator
 plumber
 sawfiler
 shop foreman
@@ -4582,3 +4578,19 @@ soaper
 stationary engineer
 wheelwright
 woodworkers
+sea serpent
+wyrm
+dragon
+dragonfly
+cobra
+mongoose
+rattlesnake
+ladybug
+hovercraft
+dirigible
+zeplin
+pony
+railgun
+leather
+asteroid
+comet
