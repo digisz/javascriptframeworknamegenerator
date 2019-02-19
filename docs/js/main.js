@@ -35,6 +35,7 @@ function randomAdj() {
         // display the noun and show everything again
         $("#theName").html(lines[randLineNum]);
 });
+}
 
 function randomName() {
     $.get('txt/nounlist.txt', function(txt) {
