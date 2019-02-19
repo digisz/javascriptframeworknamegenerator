@@ -4496,3 +4496,89 @@ zoologist
 zoology
 zoot-suit
 zucchini
+Rhino
+Trout
+Seal
+ninja
+chair
+pancake
+statue
+unicorn
+rainbows
+laser
+senor
+bunny
+captain
+nibblets
+cupcake
+carrot
+gnomes
+glitter
+potato
+salad
+toejam
+curtains
+beets
+toilet
+exorcism
+stick figures
+mermaid eggs
+sea barnacles
+dragons
+jellybeans
+snakes
+dolls
+bushes
+cookies
+apples
+ice cream
+ukulele
+kazoo
+banjo
+opera singer
+circus
+trampoline
+carousel
+carnival
+locomotive
+balloon
+praying mantis
+animator
+artisan
+artist
+colorist
+inker
+coppersmith
+director
+designer
+flatter
+stylist
+leadman
+limner
+model
+musician
+penciller
+producer
+scenographer
+set decorator
+silversmith
+teacher
+rocket
+rock
+beader
+bobbin boy
+clerk of the chapel
+foreman
+mechanic
+miller
+moldmaker
+panel beater
+patternmaker
+plant operator
+plumber
+sawfiler
+shop foreman
+soaper
+stationary engineer
+wheelwright
+woodworkers
