@@ -33,7 +33,7 @@ function randomAdj() {
         });
 
         // display the noun and show everything again
-        $("#theName").html(lines[randLineNum]);
+        $("#theAdj").html(lines[randLineNum]);
 });
 }
 
@@ -58,7 +58,7 @@ function randomName() {
         });
 
         // display the noun and show everything again
-        $("#theName").html(lines[randLineNum]);
+        $("#theNoun").html(lines[randLineNum]);
         $("#frameworkname").delay(delay).slideDown(200); // random line from the text file
         $("#generate").delay(delay).slideDown(200);
     });
