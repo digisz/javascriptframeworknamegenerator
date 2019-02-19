@@ -15,12 +15,12 @@ randomName();
 function randomAdj() {
     $.get('txt/adjectives.txt', function(txt) {
       // Hide the latest name and the button
-      $("#frameworkname").hide(0);
-      $("#generate").hide(0);
+      // $("#frameworkname").hide(0);
+      // $("#generate").hide(0);
       // generate a random time for the delay
-      var delay = Math.floor(Math.random() * 2000) + 1500
+      // var delay = Math.floor(Math.random() * 2000) + 1500
       // show the animation for some time
-      $("#trnt").fadeIn(200).delay(delay).slideUp(300);
+      // $("#trnt").fadeIn(200).delay(delay).slideUp(300);
       // extract a noun
         var lines = txt.split("\n");
         var randLineNum = Math.floor(Math.random() * lines.length);
@@ -43,9 +43,9 @@ function randomName() {
       $("#frameworkname").hide(0);
       $("#generate").hide(0);
       // generate a random time for the delay
-      // var delay = Math.floor(Math.random() * 2000) + 1500
+       var delay = Math.floor(Math.random() * 2000) + 1500
       // show the animation for some time
-      // $("#trnt").fadeIn(200).delay(delay).slideUp(300);
+       $("#trnt").fadeIn(200).delay(delay).slideUp(300);
       // extract a noun
         var lines = txt.split("\n");
         var randLineNum = Math.floor(Math.random() * lines.length);
