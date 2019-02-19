@@ -30,9 +30,9 @@ function randomName() {
           var str=data[0].defs[0].substring(2);
           $("#description").html(str);
         });
-        
+
         // display the noun and show everything again
-        $("#theAdj").html(adj[randLineNum]);
+        // $("#theAdj").html(adj[randLineNum]);
         $("#theName").html(lines[randLineNum]);
         $("#frameworkname").delay(delay).slideDown(200); // random line from the text file
         $("#generate").delay(delay).slideDown(200);
