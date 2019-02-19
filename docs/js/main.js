@@ -31,8 +31,9 @@ function randomName() {
           $("#description").html(str);
         });
         
-        // display the noung and show everything again
-        $("#theName").html(lines[randLineNum]+".JS");
+        // display the noun and show everything again
+        $("#theAdj").html(adj[randLineNum]);
+        $("#theName").html(lines[randLineNum]);
         $("#frameworkname").delay(delay).slideDown(200); // random line from the text file
         $("#generate").delay(delay).slideDown(200);
     });
