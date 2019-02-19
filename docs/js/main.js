@@ -22,6 +22,7 @@ function randomAdj() {
         $.ajax({
           url: "https://api.datamuse.com/words?sp="+adj[randAdj]+"&md=d"
         }).done(function(data) {
+          console.log(data[0]);
           var str=data[0].defs[0].substring(3);
           $("#definition").html(str);
         });
