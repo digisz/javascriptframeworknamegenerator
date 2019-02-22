@@ -1,86 +1,104 @@
+var nounlist = [];
+var adjectives = [];
+var buttons = [];
+var holdon = [];
+
 $( document ).ready(function() {
-randomAdj();
-randomName();
-ga('send', {
-hitType: 'event',
-eventCategory: 'RandomName',
-eventAction: 'FirstTime'
-});
-randomMsg();
+  $("#theNoun").hide(0);
+  $("#frameworkname").hide(0);
+  $("#makeName").hide(0);
+  $("#hold").text("loading...")
+  var removeEmptyFilter = function (item) {
+    return item.trim().length > 0
+  };
+  $.when(
+    $.get('txt/nounlist.txt').done(function(data) {
+      nounlist = data.split("\n").filter(removeEmptyFilter);
+    }),
+    $.get('txt/adjectives.txt').done(function(data) {
+      adjectives = data.split("\n").filter(removeEmptyFilter);
+    }),
+    $.get('txt/buttons.txt').done(function(data) {
+      buttons = data.split("\n").filter(removeEmptyFilter);
+    }),
+    $.get('txt/hold.txt').done(function(data) {
+      holdon = data.split("\n").filter(removeEmptyFilter);
+    })
+  ).then(function () {
+    randomAdj();
+    randomName();
+    randomMsg();
+    ga('send', {
+      hitType: 'event',
+      eventCategory: 'RandomName',
+      eventAction: 'FirstTime'
+    });
+  });
 
   $( "#makeName" ).click(function() {
     randomMsg();
     randomName();
     randomAdj();
     ga('send', {
-  hitType: 'event',
-  eventCategory: 'RandomName',
-  eventAction: 'TryAgain'
-});
-      });
+      hitType: 'event',
+      eventCategory: 'RandomName',
+      eventAction: 'TryAgain'
+    });
+  });
 });
 
 function randomMsg() {
   // Insert text into button
-  $.get('txt/buttons.txt', function(txt) {
-    var buttons = txt.split("\n");
-    var randButton = Math.floor(Math.random() * buttons.length - 1);
-    console.log(randButton);
-  $("#makeName").html(buttons[randButton]);
-  });
+  var randButton = Math.floor(Math.random() * buttons.length);
+  $("#makeName").text(buttons[randButton]);
   // Insert text into waiting message
-  $.get('txt/hold.txt', function(txt) {
-    var holdon = txt.split("\n");
-    var randHold = Math.floor(Math.random() * holdon.length - 1);
-    console.log(randHold);
-  $("#hold").html(holdon[randHold]);
-  });
+  var randHold = Math.floor(Math.random() * holdon.length);
+  $("#hold").text(holdon[randHold]);
 };
 
 function randomAdj() {
-    $.get('txt/adjectives.txt', function(txt) {
-    //$.get('txt/test.txt', function(txt) {
-      // extract a adjective
-        var adj = txt.split("\n");
-        var randAdj = Math.floor(Math.random() * adj.length);
-        // load definition
-        $.ajax({
-          url: "https://api.datamuse.com/words?sp="+adj[randAdj]+"&md=d"
-        }).done(function(data) {
-          var randDef = Math.floor(Math.random() * data[0].defs.length);
-          var str=data[0].defs[randDef].substring(data[0].defs[randDef].indexOf('	')+1);
-          $("#definition").html(str);
-        });
+  // extract a adjective
+  var randAdj = Math.floor(Math.random() * adjectives.length);
+  // load definition
+  $.ajax({
+    url: "https://api.datamuse.com/words?sp="+adjectives[randAdj]+"&md=d"
+  }).done(function(data) {
+    var randDef = Math.floor(Math.random() * data[0].defs.length);
+    var str=data[0].defs[randDef].substring(data[0].defs[randDef].indexOf(' ')+1);
+    $("#definition").text(str);
+  });
 
-        // display the noun and show everything again
-        $("#theAdj").html(adj[randAdj]);
-});
+  // display the noun and show everything again
+  $("#theAdj").text(adjectives[randAdj]);
 }
 
 function randomName() {
-    $.get('txt/nounlist.txt', function(txt) {
-      // Hide the latest name and the button
-      $("#frameworkname").hide(0);
-      $("#makeName").hide(0);
-      // generate a random time for the delay
-       var delay = Math.floor(Math.random() * 2000) + 1500
-      // show the animation for some time
-       $("#trnt").fadeIn(200).delay(delay).slideUp(300);
-      // extract a noun
-        var lines = txt.split("\n");
-        var randLineNum = Math.floor(Math.random() * lines.length);
-        // load definition
-        $.ajax({
-          url: "https://api.datamuse.com/words?sp="+lines[randLineNum]+"&md=d"
-        }).done(function(data) {
-          var randDef = Math.floor(Math.random() * data[0].defs.length);
-          var str=data[0].defs[randDef].substring(data[0].defs[randDef].indexOf('	')+1);
-          $("#description").html(str);
-        });
+  // Hide the latest name and the button
+  $("#theNoun").hide(0);
+  $("#frameworkname").hide(0);
+  $("#makeName").hide(0);
+  // generate a random time for the delay
+  var delay = Math.floor(Math.random() * 1000) + 1000
+  // show the animation for some time
+  $("#trnt").fadeIn(200).delay(delay).slideUp(300);
+  // extract a noun
+  var randLineNum = Math.floor(Math.random() * nounlist.length);
+  // load definition
+  $.ajax({
+    url: "https://api.datamuse.com/words?sp="+nounlist[randLineNum]+"&md=d"
+  }).done(function(data) {
+    if (typeof data[0].defs === 'undefined') {
+      $("#description").hide();
+    } else {
+      var randDef = Math.floor(Math.random() * data[0].defs.length);
+      var str=data[0].defs[randDef].substring(data[0].defs[randDef].replace('\t', ' ').indexOf(' ')+1);
+      // display the noun and show everything again
+      $("#description").text(str).show();
+    }
+  }).always(function() {
+    $("#theNoun").text(nounlist[randLineNum]).slideDown(200);
+    $("#frameworkname").delay(delay).slideDown(200); // random line from the text file
+    $("#makeName").delay(delay).slideDown(200);
+  })
 
-        // display the noun and show everything again
-        $("#theNoun").html(lines[randLineNum]);
-        $("#frameworkname").delay(delay).slideDown(200); // random line from the text file
-        $("#makeName").delay(delay).slideDown(200);
-    });
 }
