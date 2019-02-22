@@ -49,10 +49,10 @@ $( document ).ready(function() {
 
 function randomMsg() {
   // Insert text into button
-  var randButton = Math.floor(Math.random() * buttons.length - 1);
+  var randButton = Math.floor(Math.random() * buttons.length);
   $("#makeName").text(buttons[randButton]);
   // Insert text into waiting message
-  var randHold = Math.floor(Math.random() * holdon.length - 1);
+  var randHold = Math.floor(Math.random() * holdon.length);
   $("#hold").text(holdon[randHold]);
 };
 
