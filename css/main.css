@@ -24,7 +24,7 @@
   filter: blur(0px);
 }
 
-#generate{
+.generate{
   border: 3px solid rgb(34, 75, 145);
   background: none;
   color:rgb(34, 75, 145);

@@ -1,8 +1,14 @@
 $( document ).ready(function() {
 randomAdj();
 randomName();
+ga('send', {
+hitType: 'event',
+eventCategory: 'RandomName',
+eventAction: 'FirstTime'
+});
+randomMsg();
 
-  $( "#generate" ).click(function() {
+  $( "#makeName" ).click(function() {
     randomMsg();
     randomName();
     randomAdj();
@@ -13,6 +19,23 @@ randomName();
 });
       });
 });
+
+function randomMsg() {
+  // Insert text into button
+  $.get('txt/buttons.txt', function(txt) {
+    var buttons = txt.split("\n");
+    var randButton = Math.floor(Math.random() * buttons.length - 1);
+    console.log(randButton);
+  $("#makeName").html(buttons[randButton]);
+  });
+  // Insert text into waiting message
+  $.get('txt/hold.txt', function(txt) {
+    var holdon = txt.split("\n");
+    var randHold = Math.floor(Math.random() * holdon.length - 1);
+    console.log(randHold);
+  $("#hold").html(holdon[randHold]);
+  });
+};
 
 function randomAdj() {
     $.get('txt/adjectives.txt', function(txt) {
@@ -38,7 +61,7 @@ function randomName() {
     $.get('txt/nounlist.txt', function(txt) {
       // Hide the latest name and the button
       $("#frameworkname").hide(0);
-      $("#generate").hide(0);
+      $("#makeName").hide(0);
       // generate a random time for the delay
        var delay = Math.floor(Math.random() * 2000) + 1500
       // show the animation for some time
@@ -58,6 +81,6 @@ function randomName() {
         // display the noun and show everything again
         $("#theNoun").html(lines[randLineNum]);
         $("#frameworkname").delay(delay).slideDown(200); // random line from the text file
-        $("#generate").delay(delay).slideDown(200);
+        $("#makeName").delay(delay).slideDown(200);
     });
 }
