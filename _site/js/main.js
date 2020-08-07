@@ -45,7 +45,24 @@ $( document ).ready(function() {
       eventAction: 'TryAgain'
     });
   });
+  
+  $( "#recall" ).click(function() {
+    var prevNoun = getCookie('last_noun');
+    $("#definition").text(prevNoun);
+  });
 });
+
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i < ca.length;i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1,c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+  }
+  return null;
+}
+
 
 function randomMsg() {
   // Insert text into button
@@ -59,6 +76,7 @@ function randomMsg() {
 function randomAdj() {
   // extract a adjective
   var randAdj = Math.floor(Math.random() * adjectives.length);
+  document.cookie = "last_adj="+adjectives[randAdj]+"; expires=Sun, 1 Jan 2023 00:00:00 UTC; path=/";
   // load definition
   $.ajax({
     url: "https://api.datamuse.com/words?sp="+adjectives[randAdj]+"&md=d"
@@ -83,6 +101,7 @@ function randomName() {
   $("#trnt").fadeIn(200).delay(delay).slideUp(300);
   // extract a noun
   var randLineNum = Math.floor(Math.random() * nounlist.length);
+  document.cookie = "last_noun="+nounlist[randLineNum]+"; expires=Sun, 1 Jan 2023 00:00:00 UTC; path=/";
   // load definition
   $.ajax({
     url: "https://api.datamuse.com/words?sp="+nounlist[randLineNum]+"&md=d"
