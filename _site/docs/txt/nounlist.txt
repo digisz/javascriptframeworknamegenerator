@@ -4594,6 +4594,3 @@ railgun
 leather
 asteroid
 comet
-afterglow
-plop
-plumb

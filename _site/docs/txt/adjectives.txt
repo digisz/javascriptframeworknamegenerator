@@ -72,7 +72,6 @@ monumental
 obtuse
 orange
 parsimonious
-plumb
 pendulous
 pernicious
 pervasive
@@ -309,16 +308,3 @@ molten
 super-heated
 super-cooling
 overblown
-neat
-fast
-shredded
-smart
-sharp
-swing
-thought
-conceptual
-horrible
-terrible
-no good
-stringy
-thin
