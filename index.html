@@ -40,8 +40,8 @@
     <div class="jumbotron">
       <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-md-2 text-center">
-              <img src="namr.png" height="200px" width="auto" alt="Logo" />
+            <div class="col-xs-6 col-sm-6 col-md-2 text-center logo">
+              <img src="namr.png" alt="Logo" />
             </div>
             <div class="col-md-9 col-md-offset-1">
               <h1>PRJCT NAMR</h1>
@@ -81,12 +81,22 @@
     </div>
           <div id="frameworkname">
             <div id="theName"><span id="theAdj"></span> <span id="theNoun"></span></div>
-            <div id="definition"></div>
-            <div id="description"></div>
+            <div id="theMeaning">
+              <div id="definition"></div>
+              <div id="description"></div>
+            </div>
           </div>
 
-          <button id="makeName" class="btn btn-lg generate" type="button" aria-expanded="false"></button>
-          <!-- <button id="recall">recall</button> -->
+          <div class="btn-group">
+            <button id="makeName" class="btn btn-lg generate" type="button" aria-expanded="false"></button>
+            <button id="caret" class="btn btn-lg generate dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span>
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+            <li><a href="#" id="recall">Show me that last one again.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
