@@ -1,3 +1,10 @@
+h1 {
+  -webkit-text-stroke: 1px #fff;
+}
+.jumbotron p{
+  -webkit-text-stroke: 1px #fff;
+}
+
 .logo img{
   width: 100%;
 }
@@ -5,7 +12,7 @@
   position: relative;
   margin:20px;
   padding: 20px;
-  border:5px solid rgb(241, 226, 95);
+  border:5px solid rgb(57, 160, 237);
   border-radius: 20px;
   background-position: center;
   background-size: cover;
@@ -28,14 +35,14 @@
 }
 
 .generate{
-  border: 3px solid rgb(34, 75, 145);
+  border: 3px solid rgb(57, 160, 237);
   background: none;
-  color:rgb(34, 75, 145);
+  color:rgb(57, 160, 237);
   padding-left: 20px;
   padding-right: 20px;
 }
 #generate:hover{
-  background: rgb(34, 75, 145);
+  background: rgb(57, 160, 237);
   color:rgb(255,255,255);
 }
 
@@ -51,7 +58,7 @@
 }
 
 .jumbotron{
-  background-color: rgb(241, 226, 95);
+  background-color: rgb(57, 160, 237);
 }
 
 
