@@ -119,7 +119,7 @@ function randomAdj() {
   }).done(function(data) {
     var randDef = Math.floor(Math.random() * data[0].defs.length);
     var str=data[0].defs[randDef].substring(data[0].defs[randDef].replace('\t', ' ').indexOf(' ')+1);
-    $("#definition").text(str.charAt(0).toUpperCase() + str.slice(1));
+    $("#definition").text(currentAdj + ": \"" + str.charAt(0).toUpperCase() + str.slice(1) + "\"");
   });
 
   // display the adj and show everything again
@@ -140,7 +140,7 @@ function randomNoun() {
       var randDef = Math.floor(Math.random() * data[0].defs.length);
       var str=data[0].defs[randDef].substring(data[0].defs[randDef].replace('\t', ' ').indexOf(' ')+1);
       // display the noun and show everything again
-      $("#description").text(str.charAt(0).toUpperCase() + str.slice(1)).show();
+      $("#description").text(currentNoun + ": \"" + str.charAt(0).toUpperCase() + str.slice(1) + "\"").show();
     };
   })
   $("#theNoun").text(currentNoun);
